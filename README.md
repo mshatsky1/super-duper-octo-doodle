@@ -20,3 +20,10 @@ npm start
 npm test
 ```
 
+## Features
+
+- Calculator with basic arithmetic operations
+- Logging utility with multiple log levels
+- String manipulation utilities
+- Input validation helpers
+
