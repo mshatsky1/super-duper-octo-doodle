@@ -1,4 +1,7 @@
 function formatMessage(message) {
+  if (!message) {
+    return '[INFO] (empty message)';
+  }
   return `[INFO] ${message}`;
 }
 
