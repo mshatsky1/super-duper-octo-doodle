@@ -15,9 +15,14 @@ function warn(message) {
   log('warn', message);
 }
 
+function debug(message) {
+  log('debug', message);
+}
+
 module.exports = {
   info,
   error,
-  warn
+  warn,
+  debug
 };
 
