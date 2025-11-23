@@ -26,5 +26,23 @@ test('divide should return correct quotient', () => {
   if (divide(6, 3) !== 2) throw new Error('Expected 2');
 });
 
+test('divide should throw error on division by zero', () => {
+  try {
+    divide(5, 0);
+    throw new Error('Should have thrown error');
+  } catch (error) {
+    if (!error.message.includes('zero')) throw error;
+  }
+});
+
+test('add should throw error on invalid input', () => {
+  try {
+    add('a', 1);
+    throw new Error('Should have thrown error');
+  } catch (error) {
+    if (!error.message.includes('numbers')) throw error;
+  }
+});
+
 console.log('All tests completed');
 
