@@ -1,6 +1,23 @@
+const LOG_LEVELS = {
+  debug: 0,
+  info: 1,
+  warn: 2,
+  error: 3
+};
+
+let currentLogLevel = LOG_LEVELS.info;
+
+function setLogLevel(level) {
+  if (LOG_LEVELS[level] !== undefined) {
+    currentLogLevel = LOG_LEVELS[level];
+  }
+}
+
 function log(level, message) {
-  const timestamp = new Date().toISOString();
-  console.log(`[${timestamp}] [${level.toUpperCase()}] ${message}`);
+  if (LOG_LEVELS[level] >= currentLogLevel) {
+    const timestamp = new Date().toISOString();
+    console.log(`[${timestamp}] [${level.toUpperCase()}] ${message}`);
+  }
 }
 
 function info(message) {
@@ -23,6 +40,7 @@ module.exports = {
   info,
   error,
   warn,
-  debug
+  debug,
+  setLogLevel
 };
 
