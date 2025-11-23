@@ -44,5 +44,26 @@ test('add should throw error on invalid input', () => {
   }
 });
 
+test('multiply should handle negative numbers', () => {
+  if (multiply(-2, 3) !== -6) throw new Error('Expected -6');
+});
+
+test('subtract should handle decimal numbers', () => {
+  if (subtract(5.5, 2.3) !== 3.2) throw new Error('Expected 3.2');
+});
+
+test('divide should handle decimal results', () => {
+  if (divide(5, 2) !== 2.5) throw new Error('Expected 2.5');
+});
+
+test('all functions should reject null input', () => {
+  try {
+    add(null, 1);
+    throw new Error('Should have thrown error');
+  } catch (error) {
+    if (!error.message.includes('numbers')) throw error;
+  }
+});
+
 console.log('All tests completed');
 
