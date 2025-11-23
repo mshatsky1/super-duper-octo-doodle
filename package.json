@@ -1,0 +1,13 @@
+{
+  "name": "super-duper-octo-doodle",
+  "version": "1.0.0",
+  "description": "A simple utility project",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT"
+}
+
