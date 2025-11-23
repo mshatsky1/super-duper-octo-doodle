@@ -1,7 +1,7 @@
 {
   "name": "super-duper-octo-doodle",
   "version": "1.0.0",
-  "description": "A simple utility project",
+  "description": "A simple utility project with calculator and logging features",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
