@@ -22,9 +22,26 @@ function truncate(str, length) {
   return str.slice(0, length) + '...';
 }
 
+function padLeft(str, length, char = ' ') {
+  if (!str || typeof str !== 'string') {
+    return '';
+  }
+  return str.padStart(length, char);
+}
+
+function padRight(str, length, char = ' ') {
+  if (!str || typeof str !== 'string') {
+    return '';
+  }
+  return str.padEnd(length, char);
+}
+
 module.exports = {
   capitalize,
   reverse,
-  truncate
+  truncate,
+  padLeft,
+  padRight
 };
+
 
