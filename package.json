@@ -7,7 +7,7 @@
     "start": "node index.js",
     "test": "node tests/calculator.test.js"
   },
-  "keywords": [],
+  "keywords": ["utility", "calculator", "logger"],
   "author": "",
   "license": "MIT"
 }
