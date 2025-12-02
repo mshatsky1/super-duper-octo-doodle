@@ -54,9 +54,23 @@ function divide(a, b) {
   return a / b;
 }
 
+/**
+ * Raises a number to a power
+ * @param {number} base - Base number
+ * @param {number} exponent - Exponent
+ * @returns {number} Result of base raised to exponent
+ */
+function power(base, exponent) {
+  if (typeof base !== 'number' || typeof exponent !== 'number') {
+    throw new Error('Both arguments must be numbers');
+  }
+  return Math.pow(base, exponent);
+}
+
 module.exports = {
   add,
   subtract,
   multiply,
-  divide
+  divide,
+  power
 };
