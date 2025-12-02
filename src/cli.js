@@ -1,3 +1,8 @@
+/**
+ * Parses command line arguments into structured format
+ * @param {string[]} args - Array of command line arguments
+ * @returns {Object} Parsed arguments with command, options, and args
+ */
 function parseArgs(args) {
   const parsed = {
     command: null,
@@ -31,4 +36,6 @@ function parseArgs(args) {
 module.exports = {
   parseArgs
 };
+
+
 
