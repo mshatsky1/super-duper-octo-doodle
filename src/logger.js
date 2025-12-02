@@ -13,6 +13,10 @@ function setLogLevel(level) {
   }
 }
 
+function getLogLevel() {
+  return Object.keys(LOG_LEVELS).find(key => LOG_LEVELS[key] === currentLogLevel);
+}
+
 function log(level, message) {
   if (LOG_LEVELS[level] >= currentLogLevel) {
     const timestamp = new Date().toISOString();
@@ -41,6 +45,7 @@ module.exports = {
   error,
   warn,
   debug,
-  setLogLevel
+  setLogLevel,
+  getLogLevel
 };
 
