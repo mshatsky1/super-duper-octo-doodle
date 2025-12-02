@@ -22,9 +22,10 @@ npm test
 
 ## Features
 
-- Calculator with basic arithmetic operations
+- Calculator with basic arithmetic operations and power function
 - Logging utility with multiple log levels and filtering
-- String manipulation utilities (capitalize, reverse, truncate, padding)
+- String manipulation utilities (capitalize, reverse, truncate, padding, title case)
+- Math utilities (rounding, clamping)
 - Input validation helpers
 - CLI argument parser
 - Performance utilities (timing, debounce, throttle)
@@ -38,6 +39,7 @@ npm test
 │   ├── calculator.js    # Arithmetic operations
 │   ├── logger.js        # Logging utilities
 │   ├── stringUtils.js   # String manipulation
+│   ├── mathUtils.js     # Math utilities
 │   ├── validator.js     # Validation helpers
 │   ├── cli.js           # CLI argument parser
 │   ├── performance.js   # Performance utilities
