@@ -1,3 +1,8 @@
+/**
+ * Measures execution time of a function
+ * @param {Function} fn - Function to measure
+ * @returns {Object} Object with result and duration in milliseconds
+ */
 function measureTime(fn) {
   const start = performance.now();
   const result = fn();
@@ -32,4 +37,6 @@ module.exports = {
   debounce,
   throttle
 };
+
+
 
