@@ -18,6 +18,7 @@ function sanitizeInput(input) {
 
 module.exports = {
   formatMessage,
-  validateInput
+  validateInput,
+  sanitizeInput
 };
 
