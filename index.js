@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+// Main entry point for the application
 const config = require('./src/config');
 const { formatMessage } = require('./utils/helpers');
 const logger = require('./src/logger');
