@@ -36,12 +36,20 @@ function padRight(str, length, char = ' ') {
   return str.padEnd(length, char);
 }
 
+function toTitleCase(str) {
+  if (!str || typeof str !== 'string') {
+    return '';
+  }
+  return str.split(' ').map(word => capitalize(word)).join(' ');
+}
+
 module.exports = {
   capitalize,
   reverse,
   truncate,
   padLeft,
-  padRight
+  padRight,
+  toTitleCase
 };
 
 
