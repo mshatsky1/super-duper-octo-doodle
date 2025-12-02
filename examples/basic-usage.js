@@ -1,3 +1,4 @@
+// Example usage of project modules
 const calculator = require('../src/calculator');
 const logger = require('../src/logger');
 const { capitalize, reverse } = require('../src/stringUtils');
@@ -18,4 +19,6 @@ logger.info(`Capitalized: ${capitalize(text)}`);
 logger.info(`Reversed: ${reverse(text)}`);
 
 logger.info('Examples completed');
+
+
 
