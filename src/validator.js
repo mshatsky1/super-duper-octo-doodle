@@ -10,9 +10,17 @@ function isInteger(value) {
   return isNumber(value) && Number.isInteger(value);
 }
 
+function isNegative(value) {
+  return isNumber(value) && value < 0;
+}
+
 module.exports = {
   isNumber,
   isPositive,
-  isInteger
+  isInteger,
+  isNegative
 };
+
+
+
 
