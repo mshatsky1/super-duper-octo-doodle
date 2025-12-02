@@ -1,4 +1,4 @@
-const { add, subtract, multiply, divide } = require('../src/calculator');
+const { add, subtract, multiply, divide, power } = require('../src/calculator');
 
 // Simple test runner
 function test(name, fn) {
@@ -63,6 +63,10 @@ test('all functions should reject null input', () => {
   } catch (error) {
     if (!error.message.includes('numbers')) throw error;
   }
+});
+
+test('power should calculate exponentiation correctly', () => {
+  if (power(2, 3) !== 8) throw new Error('Expected 8');
 });
 
 console.log('All tests completed');
