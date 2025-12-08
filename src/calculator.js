@@ -67,10 +67,28 @@ function power(base, exponent) {
   return Math.pow(base, exponent);
 }
 
+/**
+ * Calculates the remainder of division
+ * @param {number} a - Dividend
+ * @param {number} b - Divisor
+ * @returns {number} Remainder of a divided by b
+ * @throws {Error} If divisor is zero or arguments are not numbers
+ */
+function modulo(a, b) {
+  if (typeof a !== 'number' || typeof b !== 'number') {
+    throw new Error('Both arguments must be numbers');
+  }
+  if (b === 0) {
+    throw new Error('Modulo by zero is not allowed');
+  }
+  return a % b;
+}
+
 module.exports = {
   add,
   subtract,
   multiply,
   divide,
-  power
+  power,
+  modulo
 };
