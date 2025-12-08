@@ -9,6 +9,10 @@
   },
   "keywords": ["utility", "calculator", "logger"],
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/username/super-duper-octo-doodle.git"
+  }
 }
 
