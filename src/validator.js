@@ -25,7 +25,3 @@ module.exports = {
   isNegative,
   isEven
 };
-
-
-
-
