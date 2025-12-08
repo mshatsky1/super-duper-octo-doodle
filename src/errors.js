@@ -22,6 +22,3 @@ module.exports = {
   ValidationError,
   CalculationError
 };
-
-
-
