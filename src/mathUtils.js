@@ -28,9 +28,23 @@ function clamp(value, min, max) {
   return Math.min(Math.max(value, min), max);
 }
 
+/**
+ * Calculates the absolute value of a number
+ * @param {number} value - The number
+ * @returns {number} Absolute value
+ * @throws {Error} If argument is not a number
+ */
+function abs(value) {
+  if (typeof value !== 'number') {
+    throw new Error('Argument must be a number');
+  }
+  return Math.abs(value);
+}
+
 module.exports = {
   roundToDecimal,
-  clamp
+  clamp,
+  abs
 };
 
 
