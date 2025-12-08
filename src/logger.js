@@ -20,7 +20,8 @@ function getLogLevel() {
 function log(level, message) {
   if (LOG_LEVELS[level] >= currentLogLevel) {
     const timestamp = new Date().toISOString();
-    console.log(`[${timestamp}] [${level.toUpperCase()}] ${message}`);
+    const formattedMessage = `[${timestamp}] [${level.toUpperCase()}] ${message}`;
+    console.log(formattedMessage);
   }
 }
 
