@@ -22,7 +22,7 @@ npm test
 
 ## Features
 
-- Calculator with basic arithmetic operations and power function
+- Calculator with basic arithmetic operations, power function, and modulo
 - Logging utility with multiple log levels and filtering
 - String manipulation utilities (capitalize, reverse, truncate, padding, title case)
 - Math utilities (rounding, clamping)
@@ -31,6 +31,7 @@ npm test
 - Performance utilities (timing, debounce, throttle)
 - Custom error classes
 - Comprehensive test suite
+- Helper utilities for common operations
 
 ## Project Structure
 
