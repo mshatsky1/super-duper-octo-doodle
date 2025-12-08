@@ -14,11 +14,16 @@ function isNegative(value) {
   return isNumber(value) && value < 0;
 }
 
+function isEven(value) {
+  return isInteger(value) && value % 2 === 0;
+}
+
 module.exports = {
   isNumber,
   isPositive,
   isInteger,
-  isNegative
+  isNegative,
+  isEven
 };
 
 
