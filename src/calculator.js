@@ -84,11 +84,28 @@ function modulo(a, b) {
   return a % b;
 }
 
+/**
+ * Calculates the square root of a number
+ * @param {number} value - The number
+ * @returns {number} Square root of the number
+ * @throws {Error} If argument is negative or not a number
+ */
+function sqrt(value) {
+  if (typeof value !== 'number') {
+    throw new Error('Argument must be a number');
+  }
+  if (value < 0) {
+    throw new Error('Cannot calculate square root of negative number');
+  }
+  return Math.sqrt(value);
+}
+
 module.exports = {
   add,
   subtract,
   multiply,
   divide,
   power,
-  modulo
+  modulo,
+  sqrt
 };
