@@ -32,11 +32,27 @@ function throttle(fn, limit) {
   };
 }
 
+/**
+ * Creates a memoized version of a function
+ * @param {Function} fn - Function to memoize
+ * @returns {Function} Memoized function
+ */
+function memoize(fn) {
+  const cache = new Map();
+  return function(...args) {
+    const key = JSON.stringify(args);
+    if (cache.has(key)) {
+      return cache.get(key);
+    }
+    const result = fn.apply(this, args);
+    cache.set(key, result);
+    return result;
+  };
+}
+
 module.exports = {
   measureTime,
   debounce,
-  throttle
+  throttle,
+  memoize
 };
-
-
-
