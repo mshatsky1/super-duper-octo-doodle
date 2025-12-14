@@ -39,11 +39,16 @@ function isEmpty(value) {
   return false;
 }
 
+function delay(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 module.exports = {
   formatMessage,
   validateInput,
   sanitizeInput,
   capitalizeFirst,
-  isEmpty
+  isEmpty,
+  delay
 };
 
