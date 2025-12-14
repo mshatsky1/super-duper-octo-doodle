@@ -33,9 +33,18 @@ function parseArgs(args) {
   return parsed;
 }
 
+/**
+ * Gets a specific option value from parsed arguments
+ * @param {Object} parsed - Parsed arguments object
+ * @param {string} key - Option key to retrieve
+ * @param {*} defaultValue - Default value if option not found
+ * @returns {*} Option value or default
+ */
+function getOption(parsed, key, defaultValue = null) {
+  return parsed.options[key] !== undefined ? parsed.options[key] : defaultValue;
+}
+
 module.exports = {
-  parseArgs
+  parseArgs,
+  getOption
 };
-
-
-
