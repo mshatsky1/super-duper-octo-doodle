@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node index.js",
     "test": "node tests/calculator.test.js",
-    "lint": "echo 'Linting not configured'"
+    "lint": "echo 'Linting not configured'",
+    "example": "node examples/basic-usage.js"
   },
   "keywords": ["utility", "calculator", "logger"],
   "author": "",
