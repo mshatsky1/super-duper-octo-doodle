@@ -50,12 +50,24 @@ function debug(message) {
   log('debug', message);
 }
 
+function logError(error) {
+  if (error instanceof Error) {
+    error(`${error.name}: ${error.message}`);
+    if (error.stack) {
+      debug(error.stack);
+    }
+  } else {
+    error(String(error));
+  }
+}
+
 module.exports = {
   info,
   error,
   warn,
   debug,
   setLogLevel,
-  getLogLevel
+  getLogLevel,
+  logError
 };
 
