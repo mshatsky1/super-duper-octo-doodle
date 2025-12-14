@@ -79,12 +79,29 @@ function max(numbers) {
   return Math.max(...numbers);
 }
 
+/**
+ * Calculates the minimum value in an array
+ * @param {number[]} numbers - Array of numbers
+ * @returns {number} Minimum value
+ * @throws {Error} If argument is not an array or is empty
+ */
+function min(numbers) {
+  if (!Array.isArray(numbers)) {
+    throw new Error('Argument must be an array');
+  }
+  if (numbers.length === 0) {
+    throw new Error('Array cannot be empty');
+  }
+  return Math.min(...numbers);
+}
+
 module.exports = {
   roundToDecimal,
   clamp,
   abs,
   average,
-  max
+  max,
+  min
 };
 
 
