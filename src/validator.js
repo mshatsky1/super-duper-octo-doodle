@@ -18,10 +18,15 @@ function isEven(value) {
   return isInteger(value) && value % 2 === 0;
 }
 
+function isOdd(value) {
+  return isInteger(value) && value % 2 !== 0;
+}
+
 module.exports = {
   isNumber,
   isPositive,
   isInteger,
   isNegative,
-  isEven
+  isEven,
+  isOdd
 };
