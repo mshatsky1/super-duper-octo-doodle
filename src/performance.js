@@ -50,9 +50,29 @@ function memoize(fn) {
   };
 }
 
+/**
+ * Retries a function a specified number of times on failure
+ * @param {Function} fn - Function to retry
+ * @param {number} retries - Number of retry attempts
+ * @param {number} delay - Delay between retries in milliseconds
+ * @returns {Promise} Promise that resolves with function result
+ */
+async function retry(fn, retries = 3, delay = 1000) {
+  try {
+    return await fn();
+  } catch (error) {
+    if (retries <= 0) {
+      throw error;
+    }
+    await new Promise(resolve => setTimeout(resolve, delay));
+    return retry(fn, retries - 1, delay);
+  }
+}
+
 module.exports = {
   measureTime,
   debounce,
   throttle,
-  memoize
+  memoize,
+  retry
 };
