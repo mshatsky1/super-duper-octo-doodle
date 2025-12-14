@@ -26,6 +26,16 @@ logger.info(`Rounded 3.14159 to 2 decimals: ${rounded}`);
 const clamped = mathUtils.clamp(150, 0, 100);
 logger.info(`Clamped 150 to range [0, 100]: ${clamped}`);
 
+const avg = mathUtils.average([1, 2, 3, 4, 5]);
+logger.info(`Average of [1, 2, 3, 4, 5]: ${avg}`);
+
+// Calculator examples with new functions
+const mod = calculator.modulo(10, 3);
+logger.info(`10 % 3 = ${mod}`);
+
+const sqrtResult = calculator.sqrt(16);
+logger.info(`sqrt(16) = ${sqrtResult}`);
+
 logger.info('Examples completed');
 
 
