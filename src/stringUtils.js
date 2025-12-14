@@ -43,13 +43,19 @@ function toTitleCase(str) {
   return str.split(' ').map(word => capitalize(word)).join(' ');
 }
 
+function removeWhitespace(str) {
+  if (!str || typeof str !== 'string') {
+    return '';
+  }
+  return str.replace(/\s+/g, '');
+}
+
 module.exports = {
   capitalize,
   reverse,
   truncate,
   padLeft,
   padRight,
-  toTitleCase
+  toTitleCase,
+  removeWhitespace
 };
-
-
