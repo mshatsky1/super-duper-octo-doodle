@@ -8,6 +8,13 @@ A simple utility project with calculator and logging features.
 npm install
 ```
 
+## Quick Start
+
+```bash
+npm start
+npm run example
+```
+
 ## Usage
 
 ```bash
