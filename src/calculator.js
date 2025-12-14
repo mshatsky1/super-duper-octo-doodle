@@ -100,6 +100,25 @@ function sqrt(value) {
   return Math.sqrt(value);
 }
 
+/**
+ * Calculates the factorial of a number
+ * @param {number} n - The number
+ * @returns {number} Factorial of n
+ * @throws {Error} If argument is negative or not an integer
+ */
+function factorial(n) {
+  if (typeof n !== 'number' || !Number.isInteger(n)) {
+    throw new Error('Argument must be an integer');
+  }
+  if (n < 0) {
+    throw new Error('Cannot calculate factorial of negative number');
+  }
+  if (n === 0 || n === 1) {
+    return 1;
+  }
+  return n * factorial(n - 1);
+}
+
 module.exports = {
   add,
   subtract,
@@ -107,5 +126,6 @@ module.exports = {
   divide,
   power,
   modulo,
-  sqrt
+  sqrt,
+  factorial
 };
