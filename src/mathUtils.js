@@ -63,11 +63,28 @@ function average(numbers) {
   return sum / numbers.length;
 }
 
+/**
+ * Calculates the maximum value in an array
+ * @param {number[]} numbers - Array of numbers
+ * @returns {number} Maximum value
+ * @throws {Error} If argument is not an array or is empty
+ */
+function max(numbers) {
+  if (!Array.isArray(numbers)) {
+    throw new Error('Argument must be an array');
+  }
+  if (numbers.length === 0) {
+    throw new Error('Array cannot be empty');
+  }
+  return Math.max(...numbers);
+}
+
 module.exports = {
   roundToDecimal,
   clamp,
   abs,
-  average
+  average,
+  max
 };
 
 
