@@ -119,6 +119,27 @@ function factorial(n) {
   return n * factorial(n - 1);
 }
 
+/**
+ * Calculates the greatest common divisor of two numbers
+ * @param {number} a - First number
+ * @param {number} b - Second number
+ * @returns {number} GCD of a and b
+ * @throws {Error} If arguments are not integers
+ */
+function gcd(a, b) {
+  if (!Number.isInteger(a) || !Number.isInteger(b)) {
+    throw new Error('Both arguments must be integers');
+  }
+  a = Math.abs(a);
+  b = Math.abs(b);
+  while (b !== 0) {
+    const temp = b;
+    b = a % b;
+    a = temp;
+  }
+  return a;
+}
+
 module.exports = {
   add,
   subtract,
@@ -127,5 +148,6 @@ module.exports = {
   power,
   modulo,
   sqrt,
-  factorial
+  factorial,
+  gcd
 };
