@@ -50,6 +50,13 @@ function removeWhitespace(str) {
   return str.replace(/\s+/g, '');
 }
 
+function countWords(str) {
+  if (!str || typeof str !== 'string') {
+    return 0;
+  }
+  return str.trim().split(/\s+/).filter(word => word.length > 0).length;
+}
+
 module.exports = {
   capitalize,
   reverse,
@@ -57,5 +64,6 @@ module.exports = {
   padLeft,
   padRight,
   toTitleCase,
-  removeWhitespace
+  removeWhitespace,
+  countWords
 };
