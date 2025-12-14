@@ -18,7 +18,18 @@ class CalculationError extends Error {
   }
 }
 
+/**
+ * Custom error for configuration failures
+ */
+class ConfigError extends Error {
+  constructor(message) {
+    super(message);
+    this.name = 'ConfigError';
+  }
+}
+
 module.exports = {
   ValidationError,
-  CalculationError
+  CalculationError,
+  ConfigError
 };
