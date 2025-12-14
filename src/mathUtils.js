@@ -41,10 +41,33 @@ function abs(value) {
   return Math.abs(value);
 }
 
+/**
+ * Calculates the average of an array of numbers
+ * @param {number[]} numbers - Array of numbers
+ * @returns {number} Average value
+ * @throws {Error} If argument is not an array or contains non-numbers
+ */
+function average(numbers) {
+  if (!Array.isArray(numbers)) {
+    throw new Error('Argument must be an array');
+  }
+  if (numbers.length === 0) {
+    throw new Error('Array cannot be empty');
+  }
+  const sum = numbers.reduce((acc, num) => {
+    if (typeof num !== 'number') {
+      throw new Error('Array must contain only numbers');
+    }
+    return acc + num;
+  }, 0);
+  return sum / numbers.length;
+}
+
 module.exports = {
   roundToDecimal,
   clamp,
-  abs
+  abs,
+  average
 };
 
 
