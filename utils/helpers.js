@@ -43,12 +43,21 @@ function delay(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+function safeJsonParse(value, fallback = null) {
+  try {
+    return JSON.parse(value);
+  } catch (err) {
+    return fallback;
+  }
+}
+
 module.exports = {
   formatMessage,
   validateInput,
   sanitizeInput,
   capitalizeFirst,
   isEmpty,
-  delay
+  delay,
+  safeJsonParse
 };
 
