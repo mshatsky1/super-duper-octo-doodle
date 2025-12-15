@@ -174,6 +174,19 @@ function nthRoot(value, n) {
   return Math.pow(value, 1 / n);
 }
 
+/**
+ * Negates a number
+ * @param {number} value - The number to negate
+ * @returns {number} Negated value
+ * @throws {Error} If argument is not a number
+ */
+function negate(value) {
+  if (typeof value !== 'number') {
+    throw new Error('Argument must be a number');
+  }
+  return -value;
+}
+
 module.exports = {
   add,
   subtract,
@@ -185,5 +198,6 @@ module.exports = {
   factorial,
   gcd,
   percentage,
-  nthRoot
+  nthRoot,
+  negate
 };
