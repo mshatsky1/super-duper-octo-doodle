@@ -11,5 +11,7 @@ if (config.debug) {
 }
 
 logger.info(`Starting ${config.appName} v${config.version}`);
+logger.debug(`Environment: ${config.environment}`);
+logger.debug(`Listening on port ${config.port} with API version ${config.apiVersion}`);
 console.log(formatMessage(`Welcome to ${config.appName} v${config.version}`));
 
