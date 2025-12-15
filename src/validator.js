@@ -22,11 +22,16 @@ function isOdd(value) {
   return isInteger(value) && value % 2 !== 0;
 }
 
+function isNonEmptyString(value) {
+  return typeof value === 'string' && value.trim().length > 0;
+}
+
 module.exports = {
   isNumber,
   isPositive,
   isInteger,
   isNegative,
   isEven,
-  isOdd
+  isOdd,
+  isNonEmptyString
 };
