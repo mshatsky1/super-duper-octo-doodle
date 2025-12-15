@@ -61,6 +61,16 @@ function toKebabCase(str) {
     .toLowerCase();
 }
 
+function toCamelCase(str) {
+  if (!str || typeof str !== 'string') {
+    return '';
+  }
+  return str
+    .trim()
+    .toLowerCase()
+    .replace(/[-_\s]+(.)?/g, (_, chr) => (chr ? chr.toUpperCase() : ''));
+}
+
 function countWords(str) {
   if (!str || typeof str !== 'string') {
     return 0;
@@ -77,5 +87,6 @@ module.exports = {
   toTitleCase,
   removeWhitespace,
   toKebabCase,
+  toCamelCase,
   countWords
 };
