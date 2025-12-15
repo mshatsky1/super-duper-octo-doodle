@@ -65,14 +65,14 @@ function withPrefix(prefix) {
   };
 }
 
-function logError(error) {
-  if (error instanceof Error) {
-    error(`${error.name}: ${error.message}`);
-    if (error.stack) {
-      debug(error.stack);
+function logError(err) {
+  if (err instanceof Error) {
+    error(`${err.name}: ${err.message}`);
+    if (err.stack) {
+      debug(err.stack);
     }
   } else {
-    error(String(error));
+    error(String(err));
   }
 }
 
