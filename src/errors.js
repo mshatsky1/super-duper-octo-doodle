@@ -28,8 +28,19 @@ class ConfigError extends Error {
   }
 }
 
+/**
+ * Custom error for network failures
+ */
+class NetworkError extends Error {
+  constructor(message) {
+    super(message);
+    this.name = 'NetworkError';
+  }
+}
+
 module.exports = {
   ValidationError,
   CalculationError,
-  ConfigError
+  ConfigError,
+  NetworkError
 };
