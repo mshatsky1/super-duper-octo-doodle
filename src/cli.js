@@ -44,7 +44,18 @@ function getOption(parsed, key, defaultValue = null) {
   return parsed.options[key] !== undefined ? parsed.options[key] : defaultValue;
 }
 
+/**
+ * Checks whether an option flag exists in parsed args
+ * @param {Object} parsed - Parsed arguments object
+ * @param {string} key - Option key to check
+ * @returns {boolean} True if option is present
+ */
+function hasOption(parsed, key) {
+  return Object.prototype.hasOwnProperty.call(parsed.options, key);
+}
+
 module.exports = {
   parseArgs,
-  getOption
+  getOption,
+  hasOption
 };
