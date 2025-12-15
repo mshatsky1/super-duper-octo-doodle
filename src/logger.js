@@ -50,6 +50,21 @@ function debug(message) {
   log('debug', message);
 }
 
+/**
+ * Creates a logger with a predefined message prefix
+ * @param {string} prefix - Prefix to prepend to messages
+ * @returns {Object} Prefixed logger methods
+ */
+function withPrefix(prefix) {
+  const format = msg => `${prefix} ${msg}`;
+  return {
+    info: msg => info(format(msg)),
+    warn: msg => warn(format(msg)),
+    error: msg => error(format(msg)),
+    debug: msg => debug(format(msg))
+  };
+}
+
 function logError(error) {
   if (error instanceof Error) {
     error(`${error.name}: ${error.message}`);
@@ -68,6 +83,7 @@ module.exports = {
   debug,
   setLogLevel,
   getLogLevel,
-  logError
+  logError,
+  withPrefix
 };
 
