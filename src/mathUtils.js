@@ -152,6 +152,29 @@ function product(numbers) {
   }, 1);
 }
 
+/**
+ * Calculates variance of an array of numbers
+ * @param {number[]} numbers - Array of numbers
+ * @returns {number} Variance value
+ * @throws {Error} If argument is not an array or is empty
+ */
+function variance(numbers) {
+  if (!Array.isArray(numbers)) {
+    throw new Error('Argument must be an array');
+  }
+  if (numbers.length === 0) {
+    throw new Error('Array cannot be empty');
+  }
+  const avg = average(numbers);
+  const squaredDiffs = numbers.map(num => {
+    if (typeof num !== 'number') {
+      throw new Error('Array must contain only numbers');
+    }
+    return Math.pow(num - avg, 2);
+  });
+  return sum(squaredDiffs) / numbers.length;
+}
+
 module.exports = {
   roundToDecimal,
   clamp,
@@ -161,7 +184,8 @@ module.exports = {
   min,
   median,
   sum,
-  product
+  product,
+  variance
 };
 
 
