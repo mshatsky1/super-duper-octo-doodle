@@ -95,13 +95,35 @@ function min(numbers) {
   return Math.min(...numbers);
 }
 
+/**
+ * Calculates the median of an array of numbers
+ * @param {number[]} numbers - Array of numbers
+ * @returns {number} Median value
+ * @throws {Error} If argument is not an array or is empty
+ */
+function median(numbers) {
+  if (!Array.isArray(numbers)) {
+    throw new Error('Argument must be an array');
+  }
+  if (numbers.length === 0) {
+    throw new Error('Array cannot be empty');
+  }
+  const sorted = [...numbers].sort((a, b) => a - b);
+  const middle = Math.floor(sorted.length / 2);
+  if (sorted.length % 2 === 0) {
+    return (sorted[middle - 1] + sorted[middle]) / 2;
+  }
+  return sorted[middle];
+}
+
 module.exports = {
   roundToDecimal,
   clamp,
   abs,
   average,
   max,
-  min
+  min,
+  median
 };
 
 
