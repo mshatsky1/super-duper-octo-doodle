@@ -116,6 +116,24 @@ function median(numbers) {
   return sorted[middle];
 }
 
+/**
+ * Calculates the sum of an array of numbers
+ * @param {number[]} numbers - Array of numbers
+ * @returns {number} Sum of values
+ * @throws {Error} If argument is not an array or contains non-numbers
+ */
+function sum(numbers) {
+  if (!Array.isArray(numbers)) {
+    throw new Error('Argument must be an array');
+  }
+  return numbers.reduce((acc, num) => {
+    if (typeof num !== 'number') {
+      throw new Error('Array must contain only numbers');
+    }
+    return acc + num;
+  }, 0);
+}
+
 module.exports = {
   roundToDecimal,
   clamp,
@@ -123,7 +141,8 @@ module.exports = {
   average,
   max,
   min,
-  median
+  median,
+  sum
 };
 
 
