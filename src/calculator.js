@@ -140,6 +140,20 @@ function gcd(a, b) {
   return a;
 }
 
+/**
+ * Calculates percentage of a value
+ * @param {number} value - The base value
+ * @param {number} percent - Percentage to calculate
+ * @returns {number} Calculated percentage
+ * @throws {Error} If arguments are not numbers
+ */
+function percentage(value, percent) {
+  if (typeof value !== 'number' || typeof percent !== 'number') {
+    throw new Error('Both arguments must be numbers');
+  }
+  return (value * percent) / 100;
+}
+
 module.exports = {
   add,
   subtract,
@@ -149,5 +163,6 @@ module.exports = {
   modulo,
   sqrt,
   factorial,
-  gcd
+  gcd,
+  percentage
 };
