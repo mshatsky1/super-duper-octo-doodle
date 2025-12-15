@@ -33,6 +33,21 @@ function throttle(fn, limit) {
 }
 
 /**
+ * Measures execution time of an async function
+ * @param {Function} fn - Async function to measure
+ * @returns {Promise<Object>} Promise with result and duration
+ */
+async function measureAsyncTime(fn) {
+  const start = performance.now();
+  const result = await fn();
+  const end = performance.now();
+  return {
+    result,
+    duration: end - start
+  };
+}
+
+/**
  * Creates a memoized version of a function
  * @param {Function} fn - Function to memoize
  * @returns {Function} Memoized function
@@ -74,5 +89,6 @@ module.exports = {
   debounce,
   throttle,
   memoize,
-  retry
+  retry,
+  measureAsyncTime
 };
