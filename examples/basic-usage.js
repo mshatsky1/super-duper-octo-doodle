@@ -1,7 +1,7 @@
 // Example usage of project modules
 const calculator = require('../src/calculator');
 const logger = require('../src/logger');
-const { capitalize, reverse } = require('../src/stringUtils');
+const { capitalize, reverse, toKebabCase, countWords } = require('../src/stringUtils');
 
 logger.info('Running basic usage examples');
 
@@ -17,6 +17,8 @@ const text = 'hello world';
 logger.info(`Original: ${text}`);
 logger.info(`Capitalized: ${capitalize(text)}`);
 logger.info(`Reversed: ${reverse(text)}`);
+logger.info(`Kebab case: ${toKebabCase(text)}`);
+logger.info(`Word count: ${countWords(text)}`);
 
 // Math utility examples
 const mathUtils = require('../src/mathUtils');
@@ -28,6 +30,9 @@ logger.info(`Clamped 150 to range [0, 100]: ${clamped}`);
 
 const avg = mathUtils.average([1, 2, 3, 4, 5]);
 logger.info(`Average of [1, 2, 3, 4, 5]: ${avg}`);
+
+const median = mathUtils.median([5, 3, 1, 4, 2]);
+logger.info(`Median of [5,3,1,4,2]: ${median}`);
 
 // Calculator examples with new functions
 const mod = calculator.modulo(10, 3);
