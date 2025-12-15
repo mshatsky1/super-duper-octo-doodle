@@ -154,6 +154,26 @@ function percentage(value, percent) {
   return (value * percent) / 100;
 }
 
+/**
+ * Calculates the nth root of a number
+ * @param {number} value - The value
+ * @param {number} n - The degree of the root
+ * @returns {number} nth root of value
+ * @throws {Error} If arguments are not numbers or n is zero
+ */
+function nthRoot(value, n) {
+  if (typeof value !== 'number' || typeof n !== 'number') {
+    throw new Error('Both arguments must be numbers');
+  }
+  if (n === 0) {
+    throw new Error('Root degree cannot be zero');
+  }
+  if (value < 0 && n % 2 === 0) {
+    throw new Error('Cannot take even root of negative number');
+  }
+  return Math.pow(value, 1 / n);
+}
+
 module.exports = {
   add,
   subtract,
@@ -164,5 +184,6 @@ module.exports = {
   sqrt,
   factorial,
   gcd,
-  percentage
+  percentage,
+  nthRoot
 };
