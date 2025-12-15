@@ -175,6 +175,16 @@ function variance(numbers) {
   return sum(squaredDiffs) / numbers.length;
 }
 
+/**
+ * Calculates standard deviation of an array of numbers
+ * @param {number[]} numbers - Array of numbers
+ * @returns {number} Standard deviation
+ * @throws {Error} If argument is not an array or is empty
+ */
+function standardDeviation(numbers) {
+  return Math.sqrt(variance(numbers));
+}
+
 module.exports = {
   roundToDecimal,
   clamp,
@@ -185,7 +195,8 @@ module.exports = {
   median,
   sum,
   product,
-  variance
+  variance,
+  standardDeviation
 };
 
 
