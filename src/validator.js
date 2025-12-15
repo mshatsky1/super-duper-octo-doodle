@@ -26,6 +26,13 @@ function isNonEmptyString(value) {
   return typeof value === 'string' && value.trim().length > 0;
 }
 
+function isWithinRange(value, min, max) {
+  if (!isNumber(value) || !isNumber(min) || !isNumber(max)) {
+    return false;
+  }
+  return value >= min && value <= max;
+}
+
 module.exports = {
   isNumber,
   isPositive,
@@ -33,5 +40,6 @@ module.exports = {
   isNegative,
   isEven,
   isOdd,
-  isNonEmptyString
+  isNonEmptyString,
+  isWithinRange
 };
