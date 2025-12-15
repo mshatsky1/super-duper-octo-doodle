@@ -71,6 +71,17 @@ function toCamelCase(str) {
     .replace(/[-_\s]+(.)?/g, (_, chr) => (chr ? chr.toUpperCase() : ''));
 }
 
+function toSnakeCase(str) {
+  if (!str || typeof str !== 'string') {
+    return '';
+  }
+  return str
+    .trim()
+    .replace(/([a-z])([A-Z])/g, '$1_$2')
+    .replace(/[\s-]+/g, '_')
+    .toLowerCase();
+}
+
 function countWords(str) {
   if (!str || typeof str !== 'string') {
     return 0;
@@ -88,5 +99,6 @@ module.exports = {
   removeWhitespace,
   toKebabCase,
   toCamelCase,
+  toSnakeCase,
   countWords
 };
