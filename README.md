@@ -38,6 +38,8 @@ npm test
 - Performance utilities (timing, debounce, throttle)
 - Custom error classes
 - Comprehensive test suite
+- Extended math helpers (median, variance, std dev)
+- Additional string helpers (kebab, snake, camel case)
 - Helper utilities for common operations
 
 ## Project Structure
