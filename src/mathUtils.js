@@ -134,6 +134,24 @@ function sum(numbers) {
   }, 0);
 }
 
+/**
+ * Calculates the product of an array of numbers
+ * @param {number[]} numbers - Array of numbers
+ * @returns {number} Product of values
+ * @throws {Error} If argument is not an array or contains non-numbers
+ */
+function product(numbers) {
+  if (!Array.isArray(numbers)) {
+    throw new Error('Argument must be an array');
+  }
+  return numbers.reduce((acc, num) => {
+    if (typeof num !== 'number') {
+      throw new Error('Array must contain only numbers');
+    }
+    return acc * num;
+  }, 1);
+}
+
 module.exports = {
   roundToDecimal,
   clamp,
@@ -142,7 +160,8 @@ module.exports = {
   max,
   min,
   median,
-  sum
+  sum,
+  product
 };
 
 
