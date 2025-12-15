@@ -50,6 +50,17 @@ function removeWhitespace(str) {
   return str.replace(/\s+/g, '');
 }
 
+function toKebabCase(str) {
+  if (!str || typeof str !== 'string') {
+    return '';
+  }
+  return str
+    .trim()
+    .replace(/([a-z])([A-Z])/g, '$1-$2')
+    .replace(/[\s_]+/g, '-')
+    .toLowerCase();
+}
+
 function countWords(str) {
   if (!str || typeof str !== 'string') {
     return 0;
@@ -65,5 +76,6 @@ module.exports = {
   padRight,
   toTitleCase,
   removeWhitespace,
+  toKebabCase,
   countWords
 };
